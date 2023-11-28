@@ -24,18 +24,30 @@
       text-align: center;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .message,
+    .blog,
+    .contact-me {
+      color: #000;
+      margin-bottom: 20px;
+      line-height: 1.5;
     }
 
     .message {
-      color: #000;
+      font-size: 36px;
+    }
+
+    .blog {
       font-size: 24px;
-      margin-top: 20px;
     }
 
     .contact-me {
-      font-size: 20px;
-      margin-top: 20px;
-      color: #000;
+      font-size: 18px;
     }
 
     footer {
@@ -46,25 +58,33 @@
   </style>
 </head>
 <body>
-  <div class="message">
-    Your heart is free. Have the courage to follow it.
-  </div>
+  <div class="content-container">
+    <div class="message">
+      Your heart is free. Have the courage to follow it.
+    </div>
 
-  <div class="message">
-    <a href="https://4lan5.blogspot.com/" target="_blank">Visit Blogspot</a>
-  </div>
+    <div class="blog">
+      <a href="https://4lan5.blogspot.com/" target="_blank">Blogspot</a>
+    </div>
 
-  <div class="contact-me">
-    <a href="mailto:root#4lan5.me">Contact: root#4lan5.me</a>
+    <div class="contact-me">
+      Mail: root#4lan5.me
+    </div>
   </div>
 
   <footer>
-    ©2013-<script type="text/javascript">
-      myDate = new Date();
-      myYear = myDate.getFullYear();
-      document.write(myYear);
-    </script>
+    ©2013-<span id="currentYear"></span>
     CC BY-NC 4.0
+
+    <script>
+      // Get the current year
+      const currentDate = new Date();
+      const currentYear = currentDate.getFullYear();
+
+      // Update the copyright text with the current year
+      const copyrightElement = document.getElementById('currentYear');
+      copyrightElement.textContent = currentYear;
+    </script>
   </footer>
 </body>
 </html>
